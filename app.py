@@ -8,7 +8,6 @@ Original file is located at
 """
 
 # 1. Install the translation library
-!pip install deep-translator
 
 import ipywidgets as widgets
 from deep_translator import GoogleTranslator
