@@ -2,4 +2,3 @@ streamlit
 ipywidgets
 deep-translator
 
-gTTS
