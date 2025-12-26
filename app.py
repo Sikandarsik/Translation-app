@@ -8,9 +8,10 @@ Original file is located at
 """
 
 # 1. Install the translation library
-import ipywidgets as widgets
+
+
 from deep_translator import GoogleTranslator
-from IPython.display import display, clear_output
+
 
 # Get a dictionary of all supported languages
 langs_dict = GoogleTranslator().get_supported_languages(as_dict=True)
@@ -18,19 +19,19 @@ langs_dict = GoogleTranslator().get_supported_languages(as_dict=True)
 dropdown_options = {k.capitalize(): v for k, v in langs_dict.items()}
 
 # 2. Create UI Elements
-text_input = widgets.Textarea(
+text_input = st.text_area(
     placeholder='Type text here...',
     description='Text:',
     layout={'width': '90%', 'height': '100px'}
 )
 
-lang_dropdown = widgets.Dropdown(
+lang_dropdown = st.selectbox(
     options=dropdown_options,
     value='es', # Default to Spanish
     description='Target:',
 )
 
-translate_button = widgets.Button(
+translate_button = st.button(
     description='Translate Now',
     button_style='success', # 'success', 'info', 'warning', 'danger' or ''
     icon='check'
